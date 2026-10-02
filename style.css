@@ -1,0 +1,181 @@
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+    /* 
+    
+    Aprendendendo a fazer um atalho de conteudo extenso
+
+    background color image repeat position/size 
+
+    */
+    background: var(--bg-url) no-repeat top center/cover;
+
+}
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0px 24px;
+}
+
+#profile {
+     text-align: center;
+     padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* switch - aqui é a posição a box onde está na pagina da etapa de trocar tema */
+#switch {
+    position: relative;
+    width: 64px;
+    height: 24px;
+    margin: 4px auto 0px;
+}
+
+/*switch - botão de trocar tema botão redondo com o icone imagem svg */
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute; /* está pegando o botão e jogando ele para cima 50% do tamanho dele mesmo, ou seja, ele vai ficar centralizado no meio da box do switch */
+    z-index: 1;
+    left: 0;
+    top: 50%; /* está pegando o botão e jogando ele para baixo 50% do tamanho dele mesmo, ou seja, ele vai ficar centralizado no meio da box do switch */
+    transform: translateY(-50%) /* está pegando o botão e jogando ele para cima 50% do tamanho dele mesmo, ou seja, ele vai ficar centralizado no meio da box do switch */
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+    
+}   
+
+/* switch - botão de trocar tema o tracking onde o botão desliza */
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);   
+}
+
+ul {
+    list-style: none; /* está tirando os marcadores da lista ( o estilo tinham dots na linha )*/
+
+    display: flex; /* está transformando a lista em um display flexível ( horizontal deixando tudo na mesma linha ) */
+    flex-direction: column; /* está transformando a lista em um display flexível ( vertical deixando tudo na mesma coluna ) */  
+    gap: 16px; /* está dando um espaçamento entre os itens da lista só funciona com display flex ativo*/
+
+    padding: 24px 0px; /* está dando um espaçamento entre os itens da lista só funciona com display flex ativo*/
+}
+
+ul li a {
+    display: flex;
+    justify-content: center; /* está centralizando o texto dentro do display na questão vertical */
+    align-items: center; /* está alinhando os itens do centro ( no caso alinhando o texto tanto vertical quanto horizontal dentro do display ) */
+    
+    height: 52px;
+    
+    background: var(--surface-color); /* está deixando o fundo do display transparente */
+    border: 1px solid var(--stroke-color); /* está deixando a borda do display transparente R significa red, G significa green, B significa blue e o A significa alpha (transparência) */
+    border-radius: 8px; /* está arredondando os cantos do display - da borda*/    
+
+    backdrop-filter: blur(4px); /* está desfocando o fundo do display */
+
+    text-decoration: none; /* está tirando o sublinhado do texto voce pode usar underline, overline ou line-through*/
+    
+    font-weight: 500; /* está deixando o texto mais grosso conhecido por bold, podemos usar 300, 400, 500, 600, 700, 800, 900 ou baseado nas fontes que temos e puxamos no html fonts google */
+
+    transition: background 0.2s; /* está dando uma transição de 0.5 segundos para o background do display */
+
+
+}
+
+/* pseudo-selector é um seletor que seleciona elementos com base em seu estado ou posição na árvore do documento. Eles são usados para aplicar estilos a elementos com base em sua relação com outros elementos ou com base em seu estado atual. */
+ul li a:hover {
+    background: var(--surface-color-hover); /* está deixando o fundo do display transparente */
+    border: 1.5px solid var(--text-color); /* está deixando a borda do display transparente R significa red, G significa green, B significa blue e o A significa alpha (transparência) */
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+
+    padding: 24px 0px;
+
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%; /* está arredondando os cantos do display - da borda*/
+}
+
+#social-links a:hover {
+    background: var(--highlight-color); /* está deixando o fundo do display transparente */
+    padding: 16px; /* está dando um espaçamento entre os itens da lista só funciona com display flex ativo*/
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --social-link-hover: rgba(0, 0, 0, 0.2);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
